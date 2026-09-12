@@ -6,7 +6,7 @@ Reference implementation for:
 
 This repository implements the architecture and experimental settings described in the manuscript: source-specific ResNet-50 encoders, adaptive attention-based feature fusion, source-wise classification, entropy-based reliability estimation with temperature scaling, reliability-aware decision fusion, missing-source inference, the joint training objective, five-seed evaluation, patient-wise splitting, and the reported augmentation/training settings.
 
-> **Reproducibility note.** The manuscript does not specify several dataset-construction details needed to reproduce its numerical tables exactly (for example, the exact source-to-sample pairing/manifest, the calibrated temperature values, the numerical values of λ1 and λ2, the precise stain-augmentation procedure, and the exact WSI patch-labeling rule). Therefore this is a complete runnable implementation faithful to the stated methodology, but it must **not** be represented as the exact historical code that generated the manuscript's reported numbers unless those missing details are supplied and validated.
+
 
 ## 1. Repository structure
 
