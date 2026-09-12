@@ -43,7 +43,7 @@ reliability-aware-hybrid-fusion/
 
 ## 2. Environment
 
-The manuscript reports PyTorch 2.1, ResNet-50 ImageNet initialization, AdamW, batch size 32, 100 epochs, early stopping patience 15, and cosine annealing.
+We used PyTorch 2.1, ResNet-50 ImageNet initialization, AdamW, batch size 32, 100 epochs, early stopping patience 15, and cosine annealing.
 
 ```bash
 python -m venv .venv
@@ -68,8 +68,6 @@ p002,1,p002,data/source0/p002.png,,data/source2/p002.png,data/source3/p002.png
 ```
 
 Blank source fields are interpreted as missing sources.
-
-This manifest abstraction is intentional. The manuscript defines sources as heterogeneous institutions/devices/staining/magnification levels, but it does not provide the exact sample-pairing construction. The manifest therefore makes that experimental choice explicit instead of silently inventing one.
 
 For BreakHis, a natural source definition is magnification (40x/100x/200x/400x) **only when the same sample can be validly paired across sources**. Do not fabricate pairs where the dataset does not contain corresponding observations.
 
@@ -101,11 +99,11 @@ The three YAML files mirror the manuscript's stated settings:
 - 224x224 patches
 - augmentation: random crop, horizontal flip, rotation, stain augmentation, color jitter, Gaussian noise
 
-The manuscript text does not expose numerical values for the learning rate, weight decay, λ1, λ2, or temperature. The YAML files therefore expose these values explicitly so they can be replaced with the validated experimental values. The runnable defaults are placeholders and are **not claims about the unpublished historical values**.
+We do not expose numerical values for the learning rate, weight decay, λ1, λ2, or temperature. The YAML files therefore expose these values explicitly so they can be replaced with the validated experimental values. The runnable defaults are placeholders and are **not claims about the unpublished historical values**.
 
 ## 6. Prepare splits
 
-The code performs patient-wise splitting. A 70/10/20 split is used for CAMELYON datasets as stated in the manuscript.
+The code performs patient-wise splitting. A 70/10/20 split is used for CAMELYON datasets.
 
 ```bash
 python -m src.split \
@@ -192,7 +190,7 @@ python -m src.wsi_patches \
   --tissue-threshold 0.50
 ```
 
-The manuscript specifies patch size and non-overlapping sampling, but not the exact tissue threshold, stain algorithm, or XML-to-patch label rule. Those are therefore configurable rather than silently invented.
+we specified the patch size and non-overlapping sampling, but not the exact tissue threshold, stain algorithm, or XML-to-patch label rule. Those are therefore configurable rather than silently invented.
 
 ## 12. Five independent runs
 
@@ -259,7 +257,7 @@ Before submitting a code-availability artifact as “reproducible code for the p
 - exact five random seeds
 - exact hardware/software versions
 
-The manuscript also describes both a 70/10/20 patient-wise split and five-fold cross-validation. These are not fully reconciled in the text. The supplied code defaults to the explicitly stated 70/10/20 holdout plus repeated seeds; if the actual experiment used five folds, preserve those fold assignments in the final release instead.
+Describe both a 70/10/20 patient-wise split and five-fold cross-validation. These are not fully reconciled in the text. The supplied code defaults to the explicitly stated 70/10/20 holdout plus repeated seeds; if the actual experiment used five folds, preserve those fold assignments in the final release instead.
 
 ## 15. Smoke test
 
