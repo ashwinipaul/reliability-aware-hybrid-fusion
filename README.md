@@ -2,7 +2,7 @@
 
 
 
-This repository implements the architecture and experimental settings described in the manuscript: source-specific ResNet-50 encoders, adaptive attention-based feature fusion, source-wise classification, entropy-based reliability estimation with temperature scaling, reliability-aware decision fusion, missing-source inference, the joint training objective, five-seed evaluation, patient-wise splitting, and the reported augmentation/training settings.
+This repository implements the architecture and experimental settings described in  our project: source-specific ResNet-50 encoders, adaptive attention-based feature fusion, source-wise classification, entropy-based reliability estimation with temperature scaling, reliability-aware decision fusion, missing-source inference, the joint training objective, five-seed evaluation, patient-wise splitting, and the reported augmentation/training settings.
 
 
 
