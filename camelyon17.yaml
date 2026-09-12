@@ -1,0 +1,47 @@
+dataset:
+  name: camelyon17
+  manifest: manifests/camelyon17_split.csv
+  num_sources: 5
+  num_classes: 2
+  image_size: 224
+  patch_size: 224
+
+model:
+  backbone: resnet50
+  pretrained: true
+  embedding_dim: 1024
+  attention_hidden_dim: 256
+  dropout: 0.0
+
+fusion:
+  temperature: 1.0
+  reliability_epsilon: 1.0e-8
+
+training:
+  batch_size: 32
+  epochs: 100
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  early_stopping_patience: 15
+  lambda_source: 1.0
+  lambda_reg: 0.0001
+  num_workers: 4
+  label_smoothing: 0.0
+
+augmentation:
+  random_crop_scale_min: 0.80
+  random_crop_scale_max: 1.00
+  horizontal_flip_p: 0.50
+  rotation_degrees: 20
+  rotation_p: 0.50
+  color_jitter_p: 0.50
+  gaussian_noise_std: 0.02
+  gaussian_noise_p: 0.25
+  stain_augmentation_p: 0.25
+
+evaluation:
+  seeds: [42, 52, 62, 72, 82]
+  split: test
+  save_predictions: true
+
+output_dir: outputs/camelyon17
