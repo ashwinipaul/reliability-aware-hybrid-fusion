@@ -17,10 +17,6 @@ reliability-aware-hybrid-fusion/
 │   ├── camelyon16.yaml
 │   ├── camelyon17.yaml
 │   └── breakhis.yaml
-├── data/
-│   └── README.md
-├── manifests/
-│   └── README.md
 ├── src/
 │   ├── __init__.py
 │   ├── augmentations.py
